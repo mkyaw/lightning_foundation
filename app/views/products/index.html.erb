@@ -1,0 +1,48 @@
+<h1>Listing products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path, class: "button radius" %>
+
+<h1>Image Hover Effect</h1>
+<div class="row">
+  <div class="small-4 small-offset-2 columns">
+
+    <div class="image-wrapper overlay-fade-in">
+      
+      <img src="https://tourneau.scene7.com/is/image/tourneau/DEV9900004?hei=450&wid=300&fmt=png-alpha&resMode=bicub&op_sharpen=1" />
+      
+      <div class="image-overlay-content">
+        <h2>.overlay-fade-in</h2>
+        <p class="price">$99.99</p>
+        <a href="#" class="button">Get it</a>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+<h1>Gradient Button</h1>
+<a class="button" href="">The Firehose Project Lightning Talk</a>
